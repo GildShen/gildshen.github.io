@@ -48,6 +48,21 @@
             font-style: italic;
         }
         
+        header .contact {
+            font-size: 0.95em;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        header .contact a {
+            color: #222;
+            text-decoration: none;
+        }
+        
+        header .contact a:hover {
+            text-decoration: underline;
+        }
+        
         nav {
             background-color: #f8f8f8;
             padding: 0;
@@ -133,6 +148,33 @@
             font-size: 1.2em;
         }
         
+        .publication-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .publication-item:before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #222;
+        }
+        
+        .award-item, .course-item {
+            margin-bottom: 10px;
+        }
+        
+        .year {
+            font-weight: bold;
+            color: #444;
+        }
+        
+        .institution {
+            font-style: italic;
+            color: #666;
+        }
+        
         .contact-info {
             background-color: #f9f9f9;
             padding: 20px;
@@ -185,8 +227,13 @@
     <div class="container">
         <header>
             <h1>Gild Wen-Cheng Shen</h1>
-            <p class="title">PhD Student in Service Science</p>
+            <p class="title">PhD Candidate in Service Science</p>
             <p class="title">National Tsing Hua University</p>
+            <p class="contact">
+                <a href="mailto:gildshen@iss.nthu.edu.tw">gildshen@iss.nthu.edu.tw</a> | 
+                +886-929-363-016 | 
+                101, Sec. 2, Kuang-Fu Road, Hsinchu 30013, Taiwan
+            </p>
         </header>
         
         <nav>
@@ -194,6 +241,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -202,46 +251,175 @@
             <section id="about">
                 <h2>About Me</h2>
                 <p>
-                    Welcome to my personal website. I am currently a PhD student at the Institute of Service Science, 
-                    National Tsing Hua University. My research focuses on service science, technology management, 
-                    and innovative business models.
+                    I am a PhD Candidate at the Institute of Service Science, National Tsing Hua University. 
+                    My research focuses on AI-enabled knowledge management systems, human-AI collaboration, 
+                    and service science. I explore how generative AI and multi-agent systems can transform 
+                    knowledge ecosystems and enhance organizational learning.
+                </p>
+                <p>
+                    My work bridges theory and practice, combining action design research with advanced 
+                    computational techniques including process mining, natural language processing, and 
+                    agentic AI development. I have published papers at leading conferences such as HICSS and KMO, 
+                    with research appearing in international journals.
                 </p>
             </section>
             
             <section id="education">
                 <h2>Education</h2>
-                <h3>PhD in Service Science</h3>
-                <p>
-                    National Tsing Hua University<br>
-                    Institute of Service Science<br>
-                    Expected Graduation: TBD
-                </p>
+                
+                <h3>PhD Candidate in Service Science</h3>
+                <p class="institution">National Tsing Hua University, Hsinchu, Taiwan</p>
+                <p>Institute of Service Science | September 2020 - Present</p>
+                <p><strong>GPA:</strong> 4.14/4.3 (11 courses, 31 credits)</p>
+                
+                <h3>Master of Business Administration (MBA)</h3>
+                <p class="institution">National Pingtung University of Science and Technology, Pingtung, Taiwan</p>
+                <p>Department of Management Information System | Graduated June 1998</p>
+                <p><strong>Thesis:</strong> Design and Implementation of A Distributed Hierarchical Striping File System for Video-On-Demand</p>
+                
+                <h3>Bachelor of Science</h3>
+                <p class="institution">Feng Chia University, Taichung, Taiwan</p>
+                <p>Information Engineering and Computer Science | Graduated July 1996</p>
             </section>
             
             <section id="research">
                 <h2>Research Interests</h2>
                 <ul>
-                    <li>Service Science</li>
-                    <li>Technology Management</li>
-                    <li>Business Model Innovation</li>
-                    <li>Digital Transformation</li>
-                    <li>Data Analytics</li>
+                    <li>AI-Enabled Knowledge Management Systems</li>
+                    <li>Human-AI Collaboration & Multi-Agent Systems</li>
+                    <li>Service Science & Digital Transformation</li>
+                    <li>Process Mining & Clinical Pathway Analytics</li>
+                    <li>Natural Language Processing & Text Mining</li>
+                    <li>Online Learning & Communities of Practice</li>
+                    <li>Generative AI & Agentic AI Development</li>
+                </ul>
+                
+                <h3>Current Research Projects</h3>
+                <ul>
+                    <li><strong>2025-Present:</strong> Governing GenAI-enabled Multi-agent Knowledge Service System with a Cooperative Business Model (NSTC)</li>
+                    <li><strong>2024-2025:</strong> The Development of Community of Practice for Knowledge and Action Through Experience-Based Knowledge Management (NSTC)</li>
+                    <li><strong>2023-2025:</strong> Mining Clinical Process for Medical Practical Training - Collaboration with Kaohsiung Chang Gung Memorial Hospital (NSTC)</li>
+                    <li><strong>2023-Present:</strong> Design and Construction of Knowledge Management System for Academy of Resilience (MOE)</li>
                 </ul>
             </section>
             
             <section id="publications">
                 <h2>Publications</h2>
-                <p>Publications and research papers will be listed here as they become available.</p>
+                
+                <h3>Journal Papers</h3>
+                <div class="publication-item">
+                    Shen, W. C., & Lin, F. R. (2025). "The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic." 
+                    <em>Revising for resubmission to Pacific Asia Journal of the Association for Information Systems (PAJAIS)</em>.
+                </div>
+                
+                <h3>Conference Papers</h3>
+                <div class="publication-item">
+                    Shen, W. C., Yang, Y. S., Lin, F. R. (2026). "Identifying Human-GenAI Relations for Knowledge Management with Action Design Research Approach." 
+                    <em>Hawaii International Conference on System Sciences (HICSS)</em>.
+                </div>
+                <div class="publication-item">
+                    Shen, W. C., Lin, F. R., Yang, Y. S., Wang, W.C. (2025). "Design Principles for Human-AI Collaborative Knowledge Service Systems." 
+                    <em>Knowledge Management Organization Conference (KMO/LTEC)</em>.
+                </div>
+                <div class="publication-item">
+                    Shen, W. C., & Lin, F. R. (2024). "The Design of AI-Enabled Experience-Based Knowledge Management System to Facilitate Knowing and Doing in Communities of Practice." 
+                    <em>KMO/LTEC</em>. <a href="https://doi.org/10.1007/978-3-031-63269-3_22" target="_blank">https://doi.org/10.1007/978-3-031-63269-3_22</a>
+                </div>
+                <div class="publication-item">
+                    Shen, W. C., & Lin, F. R. (2023). "What Drives Workers to Learn Online during COVID-19 Pandemics?" 
+                    <em>Hawaii International Conference on System Sciences (HICSS)</em>. 
+                    <a href="https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1695&context=hicss-56" target="_blank">View Paper</a>
+                </div>
+                <div class="publication-item">
+                    Shen, W. C., & Lin, F. R. (2022). "The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic." 
+                    <em>International Conference on Service Science and Innovation (ICSSI)</em>.
+                </div>
+                
+                <h3>Papers Under Review & Preparation</h3>
+                <div class="publication-item">
+                    Shen, W. C., & Lin, F. R. "From Assistants to Allies: Governing Human-AI Knowledge Ecosystems through Cooperative Multi-Agent Systems." <em>(Revising)</em>
+                </div>
+                <div class="publication-item">
+                    Shen, W. C., & Lin, F. R. "What Drives Workers in Different Sectors to Learn Online during COVID-19 Pandemics?" <em>(TBD)</em>
+                </div>
+                <div class="publication-item">
+                    Shen, W. C., Chen, C., Lin, F. (2025). "Integrating Process-Mining into Clinical Reasoning Practice." <em>(Preparing for Academic Medicine Journal)</em>
+                </div>
+            </section>
+            
+            <section id="awards">
+                <h2>Awards & Scholarships</h2>
+                <div class="award-item">
+                    <span class="year">2025:</span> NTHU Subsidy Guidelines for Academic Collaboration with the University of Washington
+                </div>
+                <div class="award-item">
+                    <span class="year">2025:</span> Spring Travel Grant for Ph.D. Students' Overseas Visiting
+                </div>
+                <div class="award-item">
+                    <span class="year">2023-2024:</span> NSTC Outstanding PhD Scholarship
+                </div>
+                <div class="award-item">
+                    <span class="year">2023-2024:</span> NTHU Principal Scholarship
+                </div>
+                <div class="award-item">
+                    <span class="year">2023:</span> NTHU CTM Doctoral Students Research Award
+                </div>
+                <div class="award-item">
+                    <span class="year">2023:</span> Winners of the NTHU International Visiting Scholarship
+                </div>
+                <div class="award-item">
+                    <span class="year">2023:</span> Domestic Graduate Students International Conference Reimbursement
+                </div>
+                <div class="award-item">
+                    <span class="year">2023:</span> "Sandwich" Doctoral Scholarship for Exchange, Bar-Ilan University
+                </div>
+                
+                <h3>Certifications & Patents</h3>
+                <div class="award-item">
+                    <strong>Certification:</strong> Project Management Professional (PMP), 2004
+                </div>
+                <div class="award-item">
+                    <strong>Patent:</strong> Taiwan Patent 201125350 - Wireless Index Scanning Apparatus and Method
+                </div>
+                <div class="award-item">
+                    <strong>Patent:</strong> Taiwan Patent I328785 - Learning System and Method with the Agent (2010)
+                </div>
+                <div class="award-item">
+                    <strong>Patent:</strong> Taiwan Patent 200901105 - Digital Learning Whiteboard Tool and Its Teaching Fabrication Method
+                </div>
+                
+                <h3>Teaching Experience</h3>
+                <div class="award-item">
+                    <strong>2021-2025:</strong> Teaching Assistant, Text Mining Course (ISS, NTHU) - Leading weekly Python coding sessions for text mining, NLP, BERT, LLMs, and Agentic AI techniques
+                </div>
+                <div class="award-item">
+                    <strong>2021-2023:</strong> Adjunct Assistant Professor, Master Seminar Class (ISS, NTHU) - Co-leading seminars with invited professionals
+                </div>
+                <div class="award-item">
+                    <strong>2021-2022:</strong> Teaching Assistant, NTHU-UTA Dual EMBA Degree Program
+                </div>
+                <div class="award-item">
+                    <strong>2021-:</strong> Doctoral Lab Manager (ISS, NTHU) - Managing public space for doctoral students
+                </div>
             </section>
             
             <section id="contact">
                 <h2>Contact</h2>
                 <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:gildshen@iss.nthu.edu.tw">gildshen@iss.nthu.edu.tw</a></p>
+                    <p><strong>Phone:</strong> +886-929-363-016</p>
+                    <p><strong>Address:</strong> 101, Sec. 2, Kuang-Fu Road, Hsinchu 30013, Taiwan</p>
                     <p><strong>Institution:</strong> National Tsing Hua University</p>
                     <p><strong>Department:</strong> Institute of Service Science</p>
                     <p><strong>GitHub:</strong> <a href="https://github.com/GildShen" target="_blank">GildShen</a></p>
                 </div>
+                
+                <h3>Technical Skills</h3>
+                <p><strong>AI & Machine Learning:</strong> GenAI, Agentic AI, LLMs (OpenAI, LangChain), RAG, BERT, RoBERTa, Process Mining</p>
+                <p><strong>Programming:</strong> Python, R, JavaScript, PHP, Visual C++</p>
+                <p><strong>NLP & Text Mining:</strong> RASA, spaCy, NLTK, sklearn, Conversational AI</p>
+                <p><strong>Databases:</strong> Neo4j (Graph DB), LanceDB (Vector DB), Milvus, MS SQL, MySQL</p>
+                <p><strong>Tools & Frameworks:</strong> RapidMiner, SmartPLS, Tableau, Web Service Development</p>
             </section>
         </div>
         
