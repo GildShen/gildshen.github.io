@@ -177,10 +177,10 @@
         /* Stats Card */
         .stat-item {
             text-align: center;
-            padding: 10px;
+            padding: 5px;
         }
         .stat-num {
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Slightly larger for emphasis */
             font-weight: 700;
             color: var(--primary);
             line-height: 1;
@@ -188,14 +188,15 @@
         .stat-label {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-top: 5px;
+            margin-top: 2px;
+            font-weight: 500;
         }
 
         /* Section Titles */
         .section-title {
             font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -205,6 +206,22 @@
         }
         
         .section-title i { color: var(--primary); }
+
+        /* Publication Section Headers */
+        .pub-section-header {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+            background: #F3F4F6;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .pub-section-header:first-child { margin-top: 0; }
+        .pub-section-header i { color: var(--text-secondary); }
 
         /* List Styles */
         .clean-list { list-style: none; }
@@ -253,6 +270,18 @@
             margin-bottom: 4px;
             display: inline-block;
         }
+        
+        /* New Style for Grid Items inside Patents */
+        .grid-list-item {
+             background: #F9FAFB;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .grid-list-item:hover {
+             border-color: var(--primary);
+        }
 
         /* Tags */
         .tag-container {
@@ -295,7 +324,7 @@
         /* Scrollable Area */
         .scrollable-content {
             overflow-y: auto;
-            max-height: 450px; /* Adjust based on content */
+            max-height: 500px; /* Adjust based on content */
             padding-right: 10px;
         }
         
@@ -367,16 +396,26 @@
                 </div>
             </div>
 
-            <!-- 2. Quick Stats (Spans 1 column) -->
-            <div class="card col-span-1 stat-card-container flex-center" style="flex-direction: column; justify-content: center; gap: 20px;">
+            <!-- 2. Quick Stats (Spans 1 column) - UPDATED (Three rows) -->
+            <div class="card col-span-1 stat-card-container flex-center" style="flex-direction: column; justify-content: center; gap: 15px;">
+                
                 <div class="stat-item">
-                    <div class="stat-num mono">10+</div>
-                    <div class="stat-label">Awards</div>
+                    <div class="stat-num mono">7</div>
+                    <div class="stat-label">Published Papers</div>
                 </div>
+
                 <div style="width: 50%; height: 1px; background: var(--border);"></div>
+                
+                <div class="stat-item">
+                    <div class="stat-num mono">3</div>
+                    <div class="stat-label">Working Papers</div>
+                </div>
+
+                <div style="width: 50%; height: 1px; background: var(--border);"></div>
+                
                 <div class="stat-item">
                     <div class="stat-num mono">6</div>
-                    <div class="stat-label">Major Projects</div>
+                    <div class="stat-label">Research Projects</div>
                 </div>
             </div>
 
@@ -455,10 +494,15 @@
                 </div>
             </div>
 
-            <!-- 6. Selected Publications (Spans 3 columns, Tall) - UPDATED -->
+            <!-- 6. Selected Publications (Spans 3 columns, Tall) -->
             <div class="card col-span-3 row-span-2">
                 <h3 class="section-title"><i data-lucide="file-text"></i> Selected Publications</h3>
                 <div class="scrollable-content">
+                    
+                    <!-- Section 1: Published -->
+                    <div class="pub-section-header">
+                        <i data-lucide="check-circle-2" width="16"></i> Published Papers
+                    </div>
                     <ul class="clean-list">
                         <!-- Journal -->
                         <li>
@@ -498,8 +542,13 @@
                             <span class="list-title">The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic</span>
                             <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
                         </li>
+                    </ul>
 
-                        <!-- Under Review / Prep -->
+                    <!-- Section 2: Work in Progress -->
+                    <div class="pub-section-header">
+                        <i data-lucide="pen-tool" width="16"></i> Works in Progress
+                    </div>
+                    <ul class="clean-list">
                         <li>
                             <span class="text-sm text-purple font-bold">Manuscript in Preparation (2026)</span>
                             <span class="list-title">4D Clinical Reasoning Analysis Framework: Integrating Screen-Interaction, Narrative, Temporal Events, and Diagnostic Context</span>
@@ -510,11 +559,16 @@
                             <span class="list-title">From Assistants to Allies: Governing Human-AI Knowledge Ecosystems through Cooperative Multi-Agent Systems</span>
                             <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
                         </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">TBD</span>
+                            <span class="list-title">What Drives Workers in Different Sectors to Learn Online during COVID-19 Pandemics?</span>
+                            <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 7. Active Research Projects (Spans 4 columns) - UPDATED -->
+            <!-- 7. Active Research Projects (Spans 4 columns) -->
             <div class="card col-span-4">
                 <h3 class="section-title"><i data-lucide="microscope"></i> Research Projects History</h3>
                 <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
@@ -574,7 +628,7 @@
                 </ul>
             </div>
 
-            <!-- 9. Honors & Awards (Spans 2 columns) -->
+            <!-- 9. Honors & Awards (Spans 2 columns) - RETAINED -->
             <div class="card col-span-2">
                 <h3 class="section-title"><i data-lucide="award"></i> Honors & Awards</h3>
                 <div class="scrollable-content" style="max-height: 300px;">
