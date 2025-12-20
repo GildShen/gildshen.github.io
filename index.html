@@ -219,11 +219,19 @@
             font-weight: 600;
             display: block;
             margin-bottom: 4px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a.list-title:hover {
+            color: var(--primary);
         }
         
         .list-meta {
             font-size: 0.85rem;
             color: var(--text-muted);
+            display: block;
         }
 
         /* Project List */
@@ -284,11 +292,27 @@
             background: var(--primary);
         }
 
-        /* Award Grid */
-        .award-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        /* Scrollable Area */
+        .scrollable-content {
+            overflow-y: auto;
+            max-height: 450px; /* Adjust based on content */
+            padding-right: 10px;
+        }
+        
+        /* Custom Scrollbar */
+        .scrollable-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scrollable-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
         }
 
         /* Footer */
@@ -346,13 +370,13 @@
             <!-- 2. Quick Stats (Spans 1 column) -->
             <div class="card col-span-1 stat-card-container flex-center" style="flex-direction: column; justify-content: center; gap: 20px;">
                 <div class="stat-item">
-                    <div class="stat-num mono">8+</div>
+                    <div class="stat-num mono">10+</div>
                     <div class="stat-label">Awards</div>
                 </div>
                 <div style="width: 50%; height: 1px; background: var(--border);"></div>
                 <div class="stat-item">
-                    <div class="stat-num mono">4</div>
-                    <div class="stat-label">Active Projects</div>
+                    <div class="stat-num mono">6</div>
+                    <div class="stat-label">Major Projects</div>
                 </div>
             </div>
 
@@ -373,7 +397,7 @@
                 </div>
             </div>
 
-            <!-- 4. Teaching Experience (Spans 2 columns) - NEW -->
+            <!-- 4. Teaching Experience (Spans 2 columns) -->
             <div class="card col-span-2">
                 <h3 class="section-title"><i data-lucide="users"></i> Teaching Experience</h3>
                 <ul class="clean-list">
@@ -397,34 +421,7 @@
                 </ul>
             </div>
 
-            <!-- 5. Active Research Projects (Spans 4 columns) - EXPANDED -->
-            <div class="card col-span-4">
-                <h3 class="section-title"><i data-lucide="microscope"></i> Active Research Projects</h3>
-                <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                    <div class="project-item">
-                        <span class="project-year">2025 - Present</span>
-                        <div class="list-title text-sm">Governing GenAI-enabled Multi-agent Knowledge Service System with a Cooperative Business Model</div>
-                        <div class="list-meta text-sm">NSTC Project</div>
-                    </div>
-                    <div class="project-item">
-                        <span class="project-year">2024 - 2025</span>
-                        <div class="list-title text-sm">The Development of Community of Practice for Knowledge and Action Through Experience-Based KM</div>
-                        <div class="list-meta text-sm">NSTC Project</div>
-                    </div>
-                    <div class="project-item">
-                        <span class="project-year">2023 - 2025</span>
-                        <div class="list-title text-sm">Mining Clinical Process for Medical Practical Training</div>
-                        <div class="list-meta text-sm">Collaboration with Kaohsiung Chang Gung Memorial Hospital (NSTC)</div>
-                    </div>
-                    <div class="project-item">
-                        <span class="project-year">2023 - Present</span>
-                        <div class="list-title text-sm">Design and Construction of Knowledge Management System for Academy of Resilience</div>
-                        <div class="list-meta text-sm">MOE Project</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Technical Skills (Spans 1 column, Tall) -->
+            <!-- 5. Technical Skills (Spans 1 column, Tall) -->
             <div class="card col-span-1 row-span-2">
                 <h3 class="section-title"><i data-lucide="code"></i> Tech Stack</h3>
                 <div style="margin-bottom: 20px;">
@@ -458,39 +455,103 @@
                 </div>
             </div>
 
-            <!-- 7. Selected Publications (Spans 3 columns, Tall) -->
+            <!-- 6. Selected Publications (Spans 3 columns, Tall) - UPDATED -->
             <div class="card col-span-3 row-span-2">
                 <h3 class="section-title"><i data-lucide="file-text"></i> Selected Publications</h3>
-                <ul class="clean-list">
-                    <li>
-                        <span class="text-sm text-purple font-bold">HICSS 2026 (Conference)</span>
-                        <a href="#" class="list-title" style="color: var(--text-main); text-decoration: none;">Identifying Human-GenAI Relations for Knowledge Management with Action Design Research Approach</a>
-                        <span class="list-meta">Shen, W. C., Yang, Y. S., Lin, F. R.</span>
-                    </li>
-                    <li>
-                        <span class="text-sm text-purple font-bold">PAJAIS (Under Review)</span>
-                        <span class="list-title">The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic</span>
-                        <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
-                    </li>
-                    <li>
-                        <span class="text-sm text-purple font-bold">KMO/LTEC 2025</span>
-                        <span class="list-title">Design Principles for Human-AI Collaborative Knowledge Service Systems</span>
-                        <span class="list-meta">Shen, W. C., Lin, F. R., Yang, Y. S., Wang, W.C.</span>
-                    </li>
-                    <li>
-                        <span class="text-sm text-purple font-bold">KMO 2024</span>
-                        <span class="list-title">The Design of AI-Enabled Experience-Based Knowledge Management System</span>
-                        <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
-                    </li>
-                    <li>
-                        <span class="text-sm text-purple font-bold">HICSS 2023</span>
-                        <a href="https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1695&context=hicss-56" target="_blank" class="list-title" style="color: var(--text-main); text-decoration: none;">What Drives Workers to Learn Online during COVID-19 Pandemics?</a>
-                        <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
-                    </li>
-                </ul>
+                <div class="scrollable-content">
+                    <ul class="clean-list">
+                        <!-- Journal -->
+                        <li>
+                            <span class="text-sm text-purple font-bold">PAJAIS (2025) - Q1 Journal</span>
+                            <a href="https://aisel.aisnet.org/pajais/vol17/iss2/6/" target="_blank" class="list-title">The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19</a>
+                            <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                        </li>
+                        
+                        <!-- Conferences -->
+                        <li>
+                            <span class="text-sm text-purple font-bold">HICSS 2026</span>
+                            <span class="list-title">Identifying Human-GenAI Relations for Knowledge Management with Action Design Research Approach</span>
+                            <span class="list-meta">Shen, W. C., Yang, Y. S., Lin, F. R.</span>
+                        </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">KMO/LTEC 2025</span>
+                            <span class="list-title">Design Principles for Human-AI Collaborative Knowledge Service Systems</span>
+                            <span class="list-meta">Shen, W. C., Lin, F. R., Yang, Y. S., Wang, W.C.</span>
+                        </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">ICRM 2024</span>
+                            <span class="list-title">The Development of Resilience Township Indicators with the Action Design Research Approach</span>
+                            <span class="list-meta">Yu-Han Sun, Fu-Ren Lin, Wen-Cheng (Gild) Shen, et al.</span>
+                        </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">KMO/LTEC 2024</span>
+                            <a href="https://doi.org/10.1007/978-3-031-63269-3_22" target="_blank" class="list-title">The Design of AI-Enabled Experience-Based Knowledge Management System</a>
+                            <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                        </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">HICSS 2023</span>
+                            <a href="https://aisel.aisnet.org/hicss-56/os/global_crises/5" target="_blank" class="list-title">What Drives Workers to Learn Online during COVID-19 Pandemics?</a>
+                            <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                        </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">ICSSI 2022</span>
+                            <span class="list-title">The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic</span>
+                            <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                        </li>
+
+                        <!-- Under Review / Prep -->
+                        <li>
+                            <span class="text-sm text-purple font-bold">Manuscript in Preparation (2026)</span>
+                            <span class="list-title">4D Clinical Reasoning Analysis Framework: Integrating Screen-Interaction, Narrative, Temporal Events, and Diagnostic Context</span>
+                            <span class="list-meta">W. Shen, C. Chen, F. Lin (Target: AAMC)</span>
+                        </li>
+                        <li>
+                            <span class="text-sm text-purple font-bold">Revising</span>
+                            <span class="list-title">From Assistants to Allies: Governing Human-AI Knowledge Ecosystems through Cooperative Multi-Agent Systems</span>
+                            <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- 8. Patents & Certifications (Spans 2 columns) - NEW -->
+            <!-- 7. Active Research Projects (Spans 4 columns) - UPDATED -->
+            <div class="card col-span-4">
+                <h3 class="section-title"><i data-lucide="microscope"></i> Research Projects History</h3>
+                <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="project-item">
+                        <span class="project-year">2025/08 - Now</span>
+                        <div class="list-title text-sm">Governing GenAI-enabled Multi-agent Knowledge Service System with a Cooperative Business Model</div>
+                        <div class="list-meta text-sm">Research Assistant | NSTC</div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-year">2024/08 - 2025/07</span>
+                        <div class="list-title text-sm">The Development of Community of Practice for Knowledge and Action Through Experience-Based KM</div>
+                        <div class="list-meta text-sm">Research Assistant | NSTC</div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-year">2023/08 - 2025/07</span>
+                        <div class="list-title text-sm">Mining Clinical Process for Medical Practical Training</div>
+                        <div class="list-meta text-sm">Research Assistant | NSTC & Kaohsiung Chang Gung Memorial Hospital</div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-year">2023/07 - Now</span>
+                        <div class="list-title text-sm">Design and Construction of KMS for Academy of Resilience</div>
+                        <div class="list-meta text-sm">Adjunct RA | MOE Benchmark Project</div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-year">2021/01 - 2022/12</span>
+                        <div class="list-title text-sm">The Leading Program in Humanities and Social Sciences at Universities</div>
+                        <div class="list-meta text-sm">Adjunct RA | MOE</div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-year">2020/09 - 2021/01</span>
+                        <div class="list-title text-sm">Innovations of Online Learning Services during the Pandemic</div>
+                        <div class="list-meta text-sm">Adjunct RA | Service Science Society of Taiwan (S3TW)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Patents & Certifications (Spans 2 columns) -->
             <div class="card col-span-2">
                 <h3 class="section-title"><i data-lucide="shield-check"></i> Patents & Certs</h3>
                 <ul class="clean-list">
@@ -513,10 +574,10 @@
                 </ul>
             </div>
 
-            <!-- 9. Honors & Awards (Spans 2 columns) - FULL LIST -->
+            <!-- 9. Honors & Awards (Spans 2 columns) -->
             <div class="card col-span-2">
                 <h3 class="section-title"><i data-lucide="award"></i> Honors & Awards</h3>
-                <div style="max-height: 300px; overflow-y: auto; padding-right: 10px;">
+                <div class="scrollable-content" style="max-height: 300px;">
                     <ul class="clean-list">
                         <li>
                             <span class="text-sm font-bold text-purple">2025</span>
