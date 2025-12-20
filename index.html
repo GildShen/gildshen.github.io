@@ -4,749 +4,563 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gild Wen-Cheng Shen - AI Researcher & PhD Candidate at National Tsing Hua University">
-    <meta property="og:title" content="Gild Wen-Cheng Shen | AI Research & Knowledge Systems">
-    <meta property="og:description" content="AI-enabled knowledge management systems, human-AI collaboration, generative AI and multi-agent research by Gild Wen-Cheng Shen.">
-    <meta name="theme-color" content="#6B46C1">
     <title>Gild Wen-Cheng Shen | AI Research & Knowledge Systems</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         :root {
-            /* Color Palette - Professional Academic Theme */
-            --primary-color: #6B46C1; /* NTHU Purple-ish */
-            --primary-dark: #553C9A;
-            --primary-light: #9F7AEA;
-            --secondary-color: #2D3748;
-            --accent-color: #38B2AC; /* Teal for highlights */
+            /* Tsing Hua Purple Palette - Modernized */
+            --primary: #7F1084;        /* NTHU Purple */
+            --primary-hover: #600C63;
+            --primary-light: #F3E5F5;  /* Very light purple for backgrounds */
             
-            --bg-body: #F7FAFC;
+            /* Neutral Scale */
+            --bg-page: #F3F4F6;        /* Cool Gray */
             --bg-card: #FFFFFF;
-            --bg-glass: rgba(255, 255, 255, 0.85);
+            --text-main: #111827;      /* Almost Black */
+            --text-secondary: #4B5563; /* Dark Gray */
+            --text-muted: #6B7280;     /* Medium Gray */
+            --border: #E5E7EB;
             
-            --text-main: #1A202C;
-            --text-muted: #718096;
-            --text-light: #A0AEC0;
-            
-            --border-subtle: #E2E8F0;
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            
-            --radius-md: 12px;
-            --radius-lg: 16px;
+            /* Design Tokens */
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-body);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
             color: var(--text-main);
             line-height: 1.6;
-            background-image: radial-gradient(#E2E8F0 1px, transparent 1px);
-            background-size: 24px 24px;
+            padding: 20px;
         }
 
-        /* --- Typography & Utilities --- */
-        h1, h2, h3, h4 {
-            color: var(--secondary-color);
-            line-height: 1.2;
-        }
+        /* Utility Classes */
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .text-purple { color: var(--primary); }
+        .text-sm { font-size: 0.875rem; }
+        .font-bold { font-weight: 700; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        a:hover {
-            color: var(--primary-dark);
-        }
-
+        /* Layout Container */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        /* --- Animations --- */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-subtle);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-main);
-            cursor: pointer;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 100px;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .hero-image-wrapper {
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .hero-img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-decoration {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
-            z-index: 1;
-            opacity: 0.3;
-            filter: blur(20px);
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-subtitle {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            display: inline-block;
-            background: rgba(107, 70, 193, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-role {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-
-        .hero-contact-grid {
+        /* --- Bento Grid Layout System --- */
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
+            grid-template-columns: repeat(4, 1fr); /* 4 Columns */
+            grid-auto-rows: minmax(auto, auto);
+            gap: 20px;
         }
 
-        .contact-item {
+        /* Grid Spans */
+        .col-span-1 { grid-column: span 1; }
+        .col-span-2 { grid-column: span 2; }
+        .col-span-3 { grid-column: span 3; }
+        .col-span-4 { grid-column: span 4; }
+        .row-span-2 { grid-row: span 2; }
+
+        /* Card Styles */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-icon {
-            color: var(--primary-color);
-        }
-
-        /* --- Section Styling --- */
-        .section-header {
-            margin-bottom: 40px;
-            position: relative;
-            padding-left: 20px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        /* --- About & Research Highlight --- */
-        .highlight-box {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-subtle);
-            margin-top: 30px;
+            flex-direction: column;
             position: relative;
             overflow: hidden;
         }
 
-        .highlight-box::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            border-color: #D8B4FE; /* Light purple border on hover */
         }
 
-        /* --- Timeline (Education & Experience) --- */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
+        /* --- Section Specifics --- */
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-subtle);
-        }
-
-        .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -35px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: white;
-            border: 3px solid var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(107, 70, 193, 0.1);
-        }
-
-        .timeline-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .timeline-place {
-            color: var(--text-muted);
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        /* --- Cards (Research & Publications) --- */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .research-card, .pub-card {
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 25px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .research-card:hover, .pub-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-light);
-        }
-
-        .pub-type {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .pub-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .pub-meta {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: auto;
-        }
-
-        /* --- Skills Grid --- */
-        .skill-group {
-            background: white;
-            padding: 25px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 20px;
-        }
-
-        .skill-group h4 {
-            margin-bottom: 15px;
+        /* Header Card */
+        .profile-card {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
+            gap: 30px;
+            background: linear-gradient(135deg, #fff 0%, #FAF5FF 100%);
         }
 
-        .skill-tags {
+        .profile-img-container {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(127, 16, 132, 0.15);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-placeholder {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        /* Contact Links */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F3F4F6;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Stats Card */
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+        }
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+            border-bottom: 2px solid #F3F4F6;
+            padding-bottom: 10px;
+        }
+        
+        .section-title i { color: var(--primary); }
+
+        /* List Styles */
+        .clean-list { list-style: none; }
+        .clean-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        .clean-list li:last-child { border-bottom: none; }
+
+        .list-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .list-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Project List */
+        .project-list {
+            display: grid;
+            gap: 15px;
+        }
+        .project-item {
+            background: #F9FAFB;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+        .project-year {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+
+        /* Tags */
+        .tag-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
-
-        .skill-tag {
-            background: var(--bg-body);
+        .tag {
+            background: #F9FAFB;
+            border: 1px solid var(--border);
             padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--secondary-color);
-            border: 1px solid var(--border-subtle);
-            font-family: 'JetBrains Mono', monospace;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        .tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
-        /* --- Footer --- */
-        footer {
+        /* Timeline (Education) */
+        .timeline-entry {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 16px;
+            border-left: 2px solid var(--border);
+        }
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        /* Award Grid */
+        .award-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Footer */
+        .footer {
             text-align: center;
-            padding: 50px 0;
+            padding: 40px 0;
             color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid var(--border-subtle);
-            margin-top: 80px;
         }
 
-        /* --- Responsive Design --- */
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .col-span-3, .col-span-4 { grid-column: span 2; }
+            .award-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 120px;
-                gap: 30px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-contact-grid {
-                justify-content: center;
-            }
-            
-            .contact-item {
-                justify-content: center;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                box-shadow: var(--shadow-md);
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-                z-index: 900;
-            }
-
-            .nav-menu.active {
-                transform: translateY(0);
-            }
-
-            .nav-toggle {
-                display: block;
-            }
+            .bento-grid { display: flex; flex-direction: column; }
+            .profile-card { flex-direction: column; text-align: center; }
+            .card { min-height: auto; }
+            .stat-card-container { display: flex; justify-content: space-around; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">Gild.Shen</div>
-            <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
-        <section class="hero fade-in">
-            <div class="hero-image-wrapper">
-                <div class="hero-decoration"></div>
-                <img src="img/gild.png" alt="Gild Wen-Cheng Shen" class="hero-img">
-            </div>
-            <div class="hero-content">
-                <span class="hero-subtitle">Ph.D. Candidate @ NTHU</span>
-                <h1>Gild Wen-Cheng Shen</h1>
-                <p class="hero-role">AI Research & Human-AI Collaboration Specialist</p>
-                
-                <div class="hero-contact-grid">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span> <a href="mailto:gildshen@iss.nthu.edu.tw">gildshen@iss.nthu.edu.tw</a>
+        <!-- Bento Grid Layout -->
+        <div class="bento-grid">
+            
+            <!-- 1. Profile / Hero Section (Spans 3 columns) -->
+            <div class="card col-span-3 profile-card">
+                <div class="profile-img-container">
+                    <!-- Replace with your image: <img src="img/gild.png" alt="Gild Shen"> -->
+                    <span class="profile-placeholder mono">GS</span>
+                </div>
+                <div class="profile-info">
+                    <div class="role-badge mono">
+                        <i data-lucide="sparkles" width="14"></i> PhD Candidate @ NTHU
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span> Hsinchu, Taiwan
+                    <h1>Gild Wen-Cheng Shen</h1>
+                    <p style="color: var(--text-secondary); max-width: 500px; margin-bottom: 15px;">
+                        Specializing in <strong>AI-enabled knowledge systems</strong> and <strong>Human-AI collaboration</strong>. 
+                        My research explores how generative AI and multi-agent systems can transform knowledge ecosystems.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:gildshen@iss.nthu.edu.tw" class="social-btn" title="Email"><i data-lucide="mail"></i></a>
+                        <a href="https://github.com/GildShen" target="_blank" class="social-btn" title="GitHub"><i data-lucide="github"></i></a>
+                        <a href="#" class="social-btn" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-btn" title="Google Scholar"><i data-lucide="graduation-cap"></i></a>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🔗</span> <a href="https://github.com/GildShen" target="_blank">GitHub: GildShen</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section-padding fade-in delay-1">
-            <div class="section-header">
-                <h2>About Me</h2>
-            </div>
-            <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 800px;">
-                I am a PhD Candidate at the Institute of Service Science, National Tsing Hua University. 
-                My work lies at the intersection of <strong>AI-enabled knowledge management</strong> and <strong>human-AI collaboration</strong>. 
-                I explore how generative AI and multi-agent systems can transform knowledge ecosystems, bridging advanced computational techniques with service science.
-            </p>
-
-            <div class="highlight-box">
-                <h4 style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; color: var(--primary-color);">
-                    <span>🧠</span> Current Research Focus
-                </h4>
-                <p>
-                    Pioneering the development of cooperative <strong>multi-agent knowledge service systems</strong>. 
-                    Moving beyond simple assistants, my research aims to turn GenAI into intelligent allies that actively participate in organizational learning and complex decision-making processes.
-                </p>
-            </div>
-        </section>
-
-        <hr style="border: 0; border-top: 1px solid var(--border-subtle);">
-
-        <section id="education" class="section-padding fade-in delay-2">
-            <div class="section-header">
-                <h2>Education</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2020 - Present</div>
-                    <h3 class="timeline-title">PhD Candidate in Service Science</h3>
-                    <p class="timeline-place">National Tsing Hua University, Hsinchu, Taiwan</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1998</div>
-                    <h3 class="timeline-title">Master of Business Administration (MBA)</h3>
-                    <p class="timeline-place">National Pingtung University of Science and Technology</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Thesis: Design and Implementation of A Distributed Hierarchical Striping File System for Video-On-Demand</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1996</div>
-                    <h3 class="timeline-title">Bachelor of Science</h3>
-                    <p class="timeline-place">Feng Chia University, Taichung</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Information Engineering and Computer Science</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="research" class="section-padding fade-in delay-2">
-            <div class="section-header">
-                <h2>Research Areas</h2>
-            </div>
-            <div class="card-grid">
-                <div class="research-card">
-                    <h4>🤖 AI & Knowledge Systems</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px;">
-                        Designing intelligent platforms that leverage GenAI for organizational learning and knowledge extraction.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <h4>🤝 Human-AI Collaboration</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px;">
-                        Developing cooperative frameworks for multi-agent systems and human interaction patterns.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <h4>🏥 Clinical Process Mining</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px;">
-                        Applying AI-driven analytics to optimize clinical pathways and medical practical training.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <h4>💬 NLP & Text Mining</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px;">
-                        Utilizing advanced NLP techniques for knowledge extraction in unstructured data.
-                    </p>
                 </div>
             </div>
 
-            <div style="margin-top: 40px;">
-                <h3 style="margin-bottom: 20px;">Active Projects</h3>
-                <ul style="list-style: none; display: grid; gap: 15px;">
-                    <li style="background: white; padding: 15px; border-radius: 8px; border-left: 3px solid var(--accent-color); box-shadow: var(--shadow-sm);">
-                        <strong>2025-Present:</strong> Governing GenAI-enabled Multi-agent Knowledge Service System (NSTC)
+            <!-- 2. Quick Stats (Spans 1 column) -->
+            <div class="card col-span-1 stat-card-container flex-center" style="flex-direction: column; justify-content: center; gap: 20px;">
+                <div class="stat-item">
+                    <div class="stat-num mono">8+</div>
+                    <div class="stat-label">Awards</div>
+                </div>
+                <div style="width: 50%; height: 1px; background: var(--border);"></div>
+                <div class="stat-item">
+                    <div class="stat-num mono">4</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+            </div>
+
+            <!-- 3. Education (Spans 2 columns) -->
+            <div class="card col-span-2">
+                <h3 class="section-title"><i data-lucide="book-open"></i> Education</h3>
+                <div class="timeline-entry">
+                    <div class="list-title">PhD Candidate in Service Science</div>
+                    <div class="list-meta">National Tsing Hua University (2020 - Present)</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="list-title">MBA, Management Info. Systems</div>
+                    <div class="list-meta">National Pingtung Univ. of Sci. & Tech. (1998)</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="list-title">BS, Information Engineering</div>
+                    <div class="list-meta">Feng Chia University (1996)</div>
+                </div>
+            </div>
+
+            <!-- 4. Teaching Experience (Spans 2 columns) - NEW -->
+            <div class="card col-span-2">
+                <h3 class="section-title"><i data-lucide="users"></i> Teaching Experience</h3>
+                <ul class="clean-list">
+                    <li>
+                        <div class="list-title">Teaching Assistant, Text Mining Course</div>
+                        <div class="list-meta">ISS, NTHU (2021-2025)</div>
+                        <div class="text-sm text-muted mt-1">Python, NLP, BERT, LLMs, Agentic AI</div>
                     </li>
-                    <li style="background: white; padding: 15px; border-radius: 8px; border-left: 3px solid var(--accent-color); box-shadow: var(--shadow-sm);">
-                        <strong>2023-2025:</strong> Mining Clinical Process for Medical Practical Training (NSTC / Chang Gung Hospital)
+                    <li>
+                        <div class="list-title">Adjunct Assistant Professor</div>
+                        <div class="list-meta">ISS, NTHU Master Seminar Class (2021-2023)</div>
+                    </li>
+                    <li>
+                        <div class="list-title">Teaching Assistant, Dual EMBA</div>
+                        <div class="list-meta">NTHU-UTA Program (2021-2022)</div>
+                    </li>
+                    <li>
+                        <div class="list-title">Doctoral Lab Manager</div>
+                        <div class="list-meta">ISS, NTHU (2021-Present)</div>
                     </li>
                 </ul>
             </div>
-        </section>
 
-        <section id="publications" class="section-padding fade-in delay-3">
-            <div class="section-header">
-                <h2>Selected Publications</h2>
-            </div>
-            <div class="card-grid">
-                <div class="pub-card">
-                    <div class="pub-type">Conference • HICSS 2026</div>
-                    <div class="pub-title">Identifying Human-GenAI Relations for Knowledge Management with Action Design Research Approach</div>
-                    <div class="pub-meta">Shen, W. C., Yang, Y. S., Lin, F. R.</div>
-                </div>
-                <div class="pub-card">
-                    <div class="pub-type">Journal • PAJAIS (Under Review)</div>
-                    <div class="pub-title">The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic</div>
-                    <div class="pub-meta">Shen, W. C., & Lin, F. R.</div>
-                </div>
-                <div class="pub-card">
-                    <div class="pub-type">Conference • KMO 2025</div>
-                    <div class="pub-title">Design Principles for Human-AI Collaborative Knowledge Service Systems</div>
-                    <div class="pub-meta">Shen, W. C., Lin, F. R., et al.</div>
-                </div>
-                <div class="pub-card">
-                    <div class="pub-type">Conference • HICSS 2023</div>
-                    <div class="pub-title">What Drives Workers to Learn Online during COVID-19 Pandemics?</div>
-                    <div class="pub-meta">Shen, W. C., & Lin, F. R.</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="awards" class="section-padding fade-in delay-3">
-            <div class="section-header">
-                <h2>Honors & Awards</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item" style="padding-bottom: 20px;">
-                    <div class="timeline-dot" style="background: var(--accent-color); border-color: var(--accent-color);"></div>
-                    <div class="timeline-date">2023 - 2024</div>
-                    <h4 class="timeline-title">NSTC Outstanding PhD Scholarship</h4>
-                </div>
-                <div class="timeline-item" style="padding-bottom: 20px;">
-                    <div class="timeline-dot" style="background: var(--accent-color); border-color: var(--accent-color);"></div>
-                    <div class="timeline-date">2023</div>
-                    <h4 class="timeline-title">NTHU CTM Doctoral Students Research Award</h4>
-                </div>
-                <div class="timeline-item" style="padding-bottom: 20px;">
-                    <div class="timeline-dot" style="background: var(--accent-color); border-color: var(--accent-color);"></div>
-                    <div class="timeline-date">2023</div>
-                    <h4 class="timeline-title">"Sandwich" Doctoral Scholarship (Bar-Ilan University Exchange)</h4>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section-padding fade-in delay-3">
-            <div class="section-header">
-                <h2>Technical Expertise</h2>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <div class="skill-group">
-                    <h4>🤖 AI & Machine Learning</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GenAI</span>
-                        <span class="skill-tag">Agentic AI</span>
-                        <span class="skill-tag">LLMs</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">Multi-Agent</span>
+            <!-- 5. Active Research Projects (Spans 4 columns) - EXPANDED -->
+            <div class="card col-span-4">
+                <h3 class="section-title"><i data-lucide="microscope"></i> Active Research Projects</h3>
+                <div class="project-list" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="project-item">
+                        <span class="project-year">2025 - Present</span>
+                        <div class="list-title text-sm">Governing GenAI-enabled Multi-agent Knowledge Service System with a Cooperative Business Model</div>
+                        <div class="list-meta text-sm">NSTC Project</div>
                     </div>
-                </div>
-                <div class="skill-group">
-                    <h4>💻 Development</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">API Design</span>
-                        <span class="skill-tag">Git</span>
+                    <div class="project-item">
+                        <span class="project-year">2024 - 2025</span>
+                        <div class="list-title text-sm">The Development of Community of Practice for Knowledge and Action Through Experience-Based KM</div>
+                        <div class="list-meta text-sm">NSTC Project</div>
                     </div>
-                </div>
-                <div class="skill-group">
-                    <h4>📊 Data & NLP</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Neo4j</span>
-                        <span class="skill-tag">Vector DB</span>
-                        <span class="skill-tag">spaCy</span>
-                        <span class="skill-tag">Process Mining</span>
-                        <span class="skill-tag">Tableau</span>
+                    <div class="project-item">
+                        <span class="project-year">2023 - 2025</span>
+                        <div class="list-title text-sm">Mining Clinical Process for Medical Practical Training</div>
+                        <div class="list-meta text-sm">Collaboration with Kaohsiung Chang Gung Memorial Hospital (NSTC)</div>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-year">2023 - Present</span>
+                        <div class="list-title text-sm">Design and Construction of Knowledge Management System for Academy of Resilience</div>
+                        <div class="list-meta text-sm">MOE Project</div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- 6. Technical Skills (Spans 1 column, Tall) -->
+            <div class="card col-span-1 row-span-2">
+                <h3 class="section-title"><i data-lucide="code"></i> Tech Stack</h3>
+                <div style="margin-bottom: 20px;">
+                    <p class="text-sm font-bold text-purple mb-2">AI & ML</p>
+                    <div class="tag-container">
+                        <span class="tag mono">GenAI</span>
+                        <span class="tag mono">Agentic AI</span>
+                        <span class="tag mono">LLMs</span>
+                        <span class="tag mono">RAG</span>
+                        <span class="tag mono">LangChain</span>
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <p class="text-sm font-bold text-purple mb-2">Dev & Data</p>
+                    <div class="tag-container">
+                        <span class="tag mono">Python</span>
+                        <span class="tag mono">R</span>
+                        <span class="tag mono">Neo4j</span>
+                        <span class="tag mono">Vector DB</span>
+                        <span class="tag mono">Process Mining</span>
+                        <span class="tag mono">SQL</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-purple mb-2">NLP</p>
+                    <div class="tag-container">
+                        <span class="tag mono">BERT</span>
+                        <span class="tag mono">spaCy</span>
+                        <span class="tag mono">Text Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Selected Publications (Spans 3 columns, Tall) -->
+            <div class="card col-span-3 row-span-2">
+                <h3 class="section-title"><i data-lucide="file-text"></i> Selected Publications</h3>
+                <ul class="clean-list">
+                    <li>
+                        <span class="text-sm text-purple font-bold">HICSS 2026 (Conference)</span>
+                        <a href="#" class="list-title" style="color: var(--text-main); text-decoration: none;">Identifying Human-GenAI Relations for Knowledge Management with Action Design Research Approach</a>
+                        <span class="list-meta">Shen, W. C., Yang, Y. S., Lin, F. R.</span>
+                    </li>
+                    <li>
+                        <span class="text-sm text-purple font-bold">PAJAIS (Under Review)</span>
+                        <span class="list-title">The Institutionalization of Farmers Association Service Offerings via LINE Group During COVID-19 Pandemic</span>
+                        <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                    </li>
+                    <li>
+                        <span class="text-sm text-purple font-bold">KMO/LTEC 2025</span>
+                        <span class="list-title">Design Principles for Human-AI Collaborative Knowledge Service Systems</span>
+                        <span class="list-meta">Shen, W. C., Lin, F. R., Yang, Y. S., Wang, W.C.</span>
+                    </li>
+                    <li>
+                        <span class="text-sm text-purple font-bold">KMO 2024</span>
+                        <span class="list-title">The Design of AI-Enabled Experience-Based Knowledge Management System</span>
+                        <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                    </li>
+                    <li>
+                        <span class="text-sm text-purple font-bold">HICSS 2023</span>
+                        <a href="https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1695&context=hicss-56" target="_blank" class="list-title" style="color: var(--text-main); text-decoration: none;">What Drives Workers to Learn Online during COVID-19 Pandemics?</a>
+                        <span class="list-meta">Shen, W. C., & Lin, F. R.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 8. Patents & Certifications (Spans 2 columns) - NEW -->
+            <div class="card col-span-2">
+                <h3 class="section-title"><i data-lucide="shield-check"></i> Patents & Certs</h3>
+                <ul class="clean-list">
+                    <li>
+                        <span class="list-title">Project Management Professional (PMP)</span>
+                        <span class="list-meta">2004</span>
+                    </li>
+                    <li>
+                        <span class="list-title">Wireless Index Scanning Apparatus and Method</span>
+                        <span class="list-meta">Taiwan Patent 201125350</span>
+                    </li>
+                    <li>
+                        <span class="list-title">Learning System and Method with the Agent</span>
+                        <span class="list-meta">Taiwan Patent I328785 (2010)</span>
+                    </li>
+                    <li>
+                        <span class="list-title">Digital Learning Whiteboard Tool</span>
+                        <span class="list-meta">Taiwan Patent 200901105</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 9. Honors & Awards (Spans 2 columns) - FULL LIST -->
+            <div class="card col-span-2">
+                <h3 class="section-title"><i data-lucide="award"></i> Honors & Awards</h3>
+                <div style="max-height: 300px; overflow-y: auto; padding-right: 10px;">
+                    <ul class="clean-list">
+                        <li>
+                            <span class="text-sm font-bold text-purple">2025</span>
+                            <span class="list-title text-sm">Subsidy Guidelines for Academic Collaboration with Univ. of Washington</span>
+                        </li>
+                        <li>
+                            <span class="text-sm font-bold text-purple">2025</span>
+                            <span class="list-title text-sm">Spring Travel Grant for Ph.D. Students' Overseas Visiting</span>
+                        </li>
+                        <li>
+                            <span class="text-sm font-bold text-purple">2023-2024</span>
+                            <span class="list-title text-sm">NSTC Outstanding PhD Scholarship</span>
+                        </li>
+                        <li>
+                            <span class="text-sm font-bold text-purple">2023-2024</span>
+                            <span class="list-title text-sm">NTHU Principal Scholarship</span>
+                        </li>
+                        <li>
+                            <span class="text-sm font-bold text-purple">2023</span>
+                            <span class="list-title text-sm">NTHU CTM Doctoral Students Research Award</span>
+                        </li>
+                        <li>
+                            <span class="text-sm font-bold text-purple">2023</span>
+                            <span class="list-title text-sm">Winners of the NTHU International Visiting Scholarship</span>
+                        </li>
+                        <li>
+                            <span class="text-sm font-bold text-purple">2023</span>
+                            <span class="list-title text-sm">"Sandwich" Doctoral Scholarship for Exchange (Bar-Ilan Univ.)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> <!-- End Bento Grid -->
+
+        <div class="footer">
+            <p>&copy; 2025 Gild Wen-Cheng Shen. Designed with academic precision.</p>
+        </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Gild Wen-Cheng Shen. All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 10px;">Designed with Academic Precision.</p>
-        </div>
-    </footer>
-
+    <!-- Initialize Icons -->
     <script>
-        // Mobile Navigation Logic
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Close menu when link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.textContent = '☰';
-            });
-        });
-
-        // Intersection Observer for Scroll Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        });
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
+        lucide.createIcons();
     </script>
 </body>
 </html>
